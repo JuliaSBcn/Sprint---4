@@ -1,12 +1,15 @@
 // Exercise 1: Get the array of all directors.
 function getAllDirectors(array) {
-  let result =  ???;
+  const result =  array.map(element => element.director);
   console.log("EXERCICE 1 ->", result);
   return result;
 }
 
 // Exercise 2: Get the films of a certain director
 function getMoviesFromDirector(array, director) {
+  const result = array.filter(element =>element.director===director);
+  console.log("EXERCICE 2 ->", result);
+  return result;
  
 }
 
