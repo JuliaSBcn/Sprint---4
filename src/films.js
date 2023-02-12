@@ -14,6 +14,12 @@ function getMoviesFromDirector(array, director) {
 }
 
 // Exercise 3: Calculate the average of the films of a given director.
+function moviesAverage(arrayReduce){
+  const arrayFiltered = Number((arrayReduce.reduce((previous, actual) => previous + actual.score, 0) / arrayReduce.length).toFixed(2));
+
+  return arrayFiltered;
+}
+
 function moviesAverageOfDirector(array, director) {
   const result = Number((array.filter(element => element.director 
     === director).map(element => element.score).reduce((totalScore, element) => totalScore + element, 0) / array.filter(element => element.director
@@ -45,10 +51,16 @@ if ( order ==0){
   );
   console.log("EXERCICE 5->", result);
   return result;
+ 
 }
 
 // Exercise 6: Calculate the average of the movies in a category
-function moviesAverageByCategory() {
+function moviesAverageByCategory(array,category) {
+
+  const moviesByCategory = array.filter(element => element.genre.includes(category) && typeof(element.score) === "number");
+  const result = moviesAverage(moviesByCategory);
+  console.log("EXERCICE 6->", result);
+  return result;
 
 }
 
